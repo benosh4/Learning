@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            string name;
+            int kmToPass;
+            int time1;
+
+            /*  Console.Write("please enter brand of first car:");
+              name = Console.ReadLine();
+              Console.Write("\n please enter speed of second car:");
+              int spe = int.Parse(Console.ReadLine());                 
+              Console.Write("insert the kelometer you want to pass:");
+              kmToPass = int.Parse(Console.ReadLine());
+              car c1 = new car(name); 
+              car c2 = new car(spe);  
+              car c3 = new car(c1); 
+              time1 = c1.TimeItTakes(kmToPass);
+              Console.Write("time takes to third card to pass kilometer is , " + time1 );
+              Console.ReadLine(); 
+
+             */
+
+            Console.WriteLine("please enter speed of your new car: ");
+            int speed_of_new_car = 0;
+            bool res;
+            try
+            {
+                speed_of_new_car = int.Parse(Console.ReadLine());
+
+                res = true;
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine("Wrong value, I`m In Catch" + e.Message);
+
+                res = false;
+            }
+            finally
+            {
+                Console.WriteLine("Wrong value, I`m In Finally");
+            }
+
+
+            HighSpeedCar myNewCar = new HighSpeedCar(speed_of_new_car);
+            string s = myNewCar.ToString();
+            Console.WriteLine("you car is :" + s); 
+            Console.ReadLine();
+            
+        }   
+    }
+}
+ 
